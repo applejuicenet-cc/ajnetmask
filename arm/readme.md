@@ -1,5 +1,0 @@
-GCC-Command:
-
-```bash
-gcc -shared -I/usr/lib/jvm/java-6-openjdk/include/ -o libajnetmask.so de_applejuicenet_nativeclasses_JNISubNetMask.c
-```
