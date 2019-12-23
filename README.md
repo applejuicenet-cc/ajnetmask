@@ -1,4 +1,5 @@
 libajnetmask
 ============
-für arm => linux
-für 64bit => windows
+arm => linux 32bit arm
+
+win_x64 => windows 7 x64
