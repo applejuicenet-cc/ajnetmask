@@ -11,13 +11,10 @@ RUN mkdir -p /usr/share/man/man1/ && mkdir /output && \
     gcc:${ARCH} \
     libc6-dev:${ARCH}
 
-ADD ./ /src
+ADD . /src
 
 WORKDIR /src
 
 VOLUME /output
 
 CMD ["/src/build.sh"]
-
-
-
