@@ -1,4 +1,8 @@
 .idea
+.vscode
 
-*ajnetmask*
-
+# build files
+ajnetmask.dll
+libajnetmask*.so
+libajnetmask.dylib
+libajnetmask.jnilib
