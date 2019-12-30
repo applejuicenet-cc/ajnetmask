@@ -1,17 +1,7 @@
-# libajnetmask.so
+# ajnetmask
 
-### build for linux
+build for `linux` are explained [here](./linux/readme.md)
 
-```bash
-export ARCH=amd64 # amd64 | i386 | arm64 | armhf
-docker build --build-arg ARCH=${ARCH} -t libajnetmask:${ARCH} . 
-docker run --rm -v $(pwd):/output libajnetmask:${ARCH}
-```
+build for `windows` are explained [here](./windows/readme.md)
 
-### build for windows
-
-```bash
-export ARCH=win64 # win64 | win32
-docker build -t libajnetmask:windows -f windows.dockerfile .
-docker run --rm -v $(pwd):/output -e ARCH=${ARCH} libajnetmask:windows
-```
+build for `darwin` are explained [here](./darwin/readme.md)
