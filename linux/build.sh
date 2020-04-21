@@ -10,3 +10,5 @@ gcc -shared \
   -o /output/libajnetmask_${ARCH}.so de_applejuicenet_nativeclasses_JNISubNetMask.c
 
 file /output/libajnetmask_${ARCH}.so
+
+ls -lah /output/libajnetmask_${ARCH}.so

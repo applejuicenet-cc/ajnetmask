@@ -1,4 +1,4 @@
-FROM debian:9-slim
+FROM debian:8-slim
 
 RUN mkdir -p /usr/share/man/man1/ && mkdir /output && \
     apt update -y && \
@@ -11,7 +11,7 @@ RUN mkdir -p /usr/share/man/man1/ && mkdir /output && \
 
 ENV ARCH="win64"
 
-ARG JDK_VERSION="1.8.0.232-2.b09"
+ARG JDK_VERSION="1.8.0.252-2.b09"
 
 RUN curl -s -L "https://github.com/ojdkbuild/ojdkbuild/releases/download/java-1.8.0-openjdk-${JDK_VERSION}/java-1.8.0-openjdk-${JDK_VERSION}.ojdkbuild.windows.x86_64.zip" -o /tmp/jdk.zip
 
