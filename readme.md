@@ -1,4 +1,4 @@
-# ajnetmask
+# appleJuice ajnetmask
 
 build for `linux` are explained [here](./linux/readme.md)
 
