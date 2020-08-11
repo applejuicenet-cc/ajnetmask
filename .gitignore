@@ -4,3 +4,5 @@
 ajnetmask*.dll
 libajnetmask*.so
 libajnetmask.jnilib
+
+*.jar

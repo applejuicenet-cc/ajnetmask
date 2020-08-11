@@ -1,11 +1,9 @@
-# ajnetmask.dylib build for macOS
+# libajnetmask.jnilib for macOS
 
-## pre requirements
+Der Build kann unter jedem Betriebssystem ausgeführt werden, solang JNI Header für `darwin` vorliegen!
 
-1. [Xcode](https://apps.apple.com/app/xcode/id497799835) installed
-2. [adoptopenjdk-8](https://github.com/AdoptOpenJDK/homebrew-openjdk) installed
+Die [build.sh](build.sh) ggf. mit dem Pfad zu einer JDK für macOS starten, z.B.
 
-## build
-
-1. open this folder (`darwin`) in Xcode
-2. TBD
+```bash
+JAVA_HOME="/path/to/macOS/JDK" ./build.sh
+```
