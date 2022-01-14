@@ -5,6 +5,7 @@
 #include <sys/socket.h>
 #include <netdb.h>
 #include <ifaddrs.h>
+#include <net/if.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -40,16 +41,22 @@ JNIEXPORT jobjectArray JNICALL Java_de_applejuicenet_nativeclasses_JNISubNetMask
 
     /* Walk through linked list, maintaining head pointer so we can free list later */
     for (ifa = ifaddr; ifa != NULL; ifa = ifa->ifa_next) {
-        if (ifa->ifa_addr == NULL)
+        if (ifa->ifa_addr == NULL) {
            continue;
+        }
 
-        if (ifa->ifa_addr->sa_family != AF_INET)
+        if (ifa->ifa_addr->sa_family != AF_INET) {
             continue;
+        }
+
+        if(0 == (ifa->ifa_flags & IFF_RUNNING)) {
+            continue;
+        }
 
         s = getnameinfo(ifa->ifa_addr, sizeof(struct sockaddr_in), host, NI_MAXHOST, NULL, 0, NI_NUMERICHOST);
         s2 = getnameinfo(ifa->ifa_netmask, sizeof(struct sockaddr_in), subnet, NI_MAXHOST, NULL, 0, NI_NUMERICHOST);
 
-        if (s != 0 || s2 != 0) {
+        if (s != 0) {
             printf("getnameinfo() failed: %s (%s)\n", gai_strerror(s), gai_strerror(s2));
             exit(EXIT_FAILURE);
         }

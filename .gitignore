@@ -2,7 +2,6 @@
 
 # build files
 ajnetmask*.dll
-libajnetmask*.so
-libajnetmask.jnilib
+libajnetmask*
 
 *.jar
